@@ -6,9 +6,10 @@ app.get("", (req, res) => {
 app.get("/help", (req, res) => {
   res.send("Help Page");
 });
-app.get("/about",(req,res)=>{
-  res.send("About page")
-})
+app.get("/about", (req, res) => {
+  res.send("About page");
+});
 app.listen(3000, () => {
+  console.log();
   console.log("Server is up on port 3000");
 });
