@@ -1,13 +1,30 @@
+const path = require("path");
 const express = require("express");
 const app = express();
+// console.log(path.join(__dirname, "../public"));
+const publicDirectoryPath = path.join(__dirname, "../public");
+app.set("view engine", "hbs");
+app.use(express.static(publicDirectoryPath));
 app.get("", (req, res) => {
-  res.send("Hello express!");
-});
-app.get("/help", (req, res) => {
-  res.send("Help Page");
+  res.render("index", {
+    title: "Weather App",
+    name: "Andrew Mead"
+  });
 });
 app.get("/about", (req, res) => {
-  res.send("About page");
+  res.render("about", {
+    title: "About",
+    content: "This is the content"
+  });
+});
+app.get("/help", (req, res) => {
+  res.render("help", {
+    title: "Help",
+    content: "This is the help content"
+  });
+});
+app.get("/weather", (req, res) => {
+  res.send({ temperature: 27, forecast: "Sunny", location: "Engandiyur" });
 });
 app.listen(3000, () => {
   console.log();
