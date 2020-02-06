@@ -2,6 +2,7 @@ const path = require("path");
 const hbs = require("hbs");
 const express = require("express");
 const app = express();
+const port = process.env.PORT || 3000;
 const geocode = require("../src/utils/geocode");
 const forecast = require("../src/utils/forecast");
 // console.log(path.join(__dirname, "../public"));
