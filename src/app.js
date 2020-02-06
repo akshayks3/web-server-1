@@ -74,7 +74,7 @@ app.get("*", (req, res) => {
   res.render("404page", { body: "Error 404 page not found", name: "Akshay" });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log();
-  console.log("Server is up on port 3000");
+  console.log("Server is up on port port");
 });
